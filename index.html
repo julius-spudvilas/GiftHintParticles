@@ -184,12 +184,12 @@ var canvasWidth = document.getElementById("particles-js").offsetWidth,
                 console.log(element + " Particle removed");
             }
           };
-          requestAnimationFrame(removeParticle);
         } else {
           console.log("no more particles")
         };
     }
+    requestAnimationFrame(removeParticle);
 };
-setTimeout( requestAnimationFrame(removeParticle), 1000 );
+requestAnimationFrame(removeParticle);
 </script>
 </html>
