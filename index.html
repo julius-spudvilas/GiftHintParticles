@@ -33,10 +33,10 @@
     particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 10,
+      "value": 50,
       "density": {
         "enable": false,
-        "value_area": 0
+        "value_area": 50
       }
     },
     "color": {
@@ -69,12 +69,12 @@
       }
     },
     "size": {
-      "value": 100,
+      "value": 75,
       "random": false,
       "anim": {
         "enable": true,
         "speed": 10,
-        "size_min": 45,
+        "size_min": 10,
         "sync": false
       }
     },
@@ -190,6 +190,7 @@ var canvasWidth = document.getElementById("particles-js").offsetWidth,
     }
     requestAnimationFrame(removeParticle);
 };
+console.clear();
 requestAnimationFrame(removeParticle);
 </script>
 </html>
