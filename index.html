@@ -43,6 +43,7 @@
       "value": "#ffffff"
     },
     "shape": {
+      // "type": ["image1","image2","image3"],
       "type": "image",
       "stroke": {
         "width": 0,
@@ -53,9 +54,26 @@
       },
       "image": {
         // "src": "http://www.pandora.net/assets/content?sku=792075ENMX&format=png&width=124&height=124&hash=3F6EDB987EFFD59D09C27BAB7F417E624C2D694E",
-        "src": "heart.png",
-        "width": 200,
-        "height": 200
+        // "src": ["heart-grey.png", "heart-pink.png", "heart-yelow.png"],
+        // "src": "heart-grey.png",
+        "src": "heart-filled.svg",
+        "width": 65,
+        "height": 65
+      },
+      "image1": {
+        "src": "heart-grey.png",
+        "width": 65,
+        "height": 65
+      },
+      "image2": {
+        "src": "heart-pink.png",
+        "width": 65,
+        "height": 65
+      },
+      "image3": {
+        "src": "heart-yelow.png",
+        "width": 65,
+        "height": 65
       }
     },
     "opacity": {
@@ -165,7 +183,7 @@ update = function() {
 requestAnimationFrame(update);
 </script>
 
-<script>
+<!--<script>
 var canvasWidth = document.getElementById("particles-js").offsetWidth,
     canvasHeight = document.getElementById("particles-js").offsetHeight,
     runOnce = true,
@@ -192,5 +210,5 @@ var canvasWidth = document.getElementById("particles-js").offsetWidth,
 };
 console.clear();
 requestAnimationFrame(removeParticle);
-</script>
+</script>-->
 </html>
