@@ -13,16 +13,9 @@
   <span class="js-count-particles">--</span> particles
 </div>
 
-<div style="
-    width: 100px;
-    height: 100px;
-    background: black;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    z-index: 10;
-    display: none;
-"></div>
+<div class="circle">
+<div class="header-text">header text</div>
+</div>
 
 </body>
 
@@ -33,10 +26,10 @@
     particlesJS("particles-js", {
   "particles": {
     "number": {
-      "value": 10,
+      "value": 50,
       "density": {
         "enable": true,
-        "value_area": 400
+        "value_area": 300
       }
     },
     "color": {
@@ -55,8 +48,8 @@
       "image": {
         // "src": "http://www.pandora.net/assets/content?sku=792075ENMX&format=png&width=124&height=124&hash=3F6EDB987EFFD59D09C27BAB7F417E624C2D694E",
         // "src": ["heart-grey.png", "heart-pink.png", "heart-yelow.png"],
-        // "src": "heart-grey.png",
-        "src": "heart-filled.svg",
+        "src": "heart-yelow.png",
+        // "src": "https://crossorigin.me/https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg",
         "width": 65,
         "height": 65
       },
@@ -183,7 +176,7 @@ update = function() {
 requestAnimationFrame(update);
 </script>
 
-<!--<script>
+<script>
 var canvasWidth = document.getElementById("particles-js").offsetWidth,
     canvasHeight = document.getElementById("particles-js").offsetHeight,
     runOnce = true,
@@ -210,5 +203,5 @@ var canvasWidth = document.getElementById("particles-js").offsetWidth,
 };
 console.clear();
 requestAnimationFrame(removeParticle);
-</script>-->
+</script>
 </html>

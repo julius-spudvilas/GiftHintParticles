@@ -32,6 +32,29 @@ canvas {
   background-position: 50% 50%;
 }
 
+.circle {
+  width: 400px;
+    height: 400px;
+    background: #281a3c;
+    position: fixed;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin: -200px;
+    z-index: 10;
+    display: block;
+    pointer-events:  none;
+}
+
+.header-text {
+  position: absolute;
+  top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #99755d;
+    font-size: 30px;
+}
+
 /* ---- stats.js ---- */
 
 .count-particles{
