@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<div id="cover">
 <div id="particles-js"></div>
 <!-- stats - count particles -->
 <div class="count-particles">
@@ -16,7 +17,10 @@
 <div class="circle">
 <div class="header-text">header text</div>
 </div>
-
+</div>
+<div id="page">
+  <img src="desktop.jpg"/>
+</div>
 </body>
 
 <script src="scripts/particles.js"></script>
@@ -177,9 +181,11 @@ requestAnimationFrame(update);
 </script>
 
 <script>
-var canvasWidth = document.getElementById("particles-js").offsetWidth,
-    canvasHeight = document.getElementById("particles-js").offsetHeight,
-    runOnce = true,
+setTimeout( function() {
+var canvas = document.getElementById("particles-js"),
+    canvasWidth = canvas.offsetWidth,
+    canvasHeight = canvas.offsetHeight,
+    initialParticlesCount = window.pJSDom[0].pJS.particles.array.length,
     removeParticle = function() {
     if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
         if(window.pJSDom[0].pJS.particles.array.length >= 1){
@@ -193,16 +199,20 @@ var canvasWidth = document.getElementById("particles-js").offsetWidth,
                 window.pJSDom[0].pJS.particles.array.splice(element,1);
                 window.pJSDom[0].pJS.particlesDraw;
                 console.log(element + " Particle removed");
+				                var currentParticleCount = window.pJSDom[0].pJS.particles.array.length;
+                bgOpacity =  currentParticleCount / initialParticlesCount;
+                canvas.style.backgroundColor = 'rgba(' + 47 + ',' + 31 + ',' + 69 + ',' + bgOpacity + ')';
             }
           };
         } else {
-          console.log("no more particles")
+          console.log("no more particles");
+		  document.body.className = "hide";
         };
     }
     requestAnimationFrame(removeParticle);
 };
-console.clear();
 requestAnimationFrame(removeParticle);
+}, 3000 );
 </script>
 
 </html>
