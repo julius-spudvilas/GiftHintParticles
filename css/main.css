@@ -46,6 +46,15 @@ canvas {
     pointer-events:  none;
 }
 
+#sphere {
+	position: absolute;	
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	-webkit-radius: 50px;
+	background-color: blue;
+}
+
 .header-text {
   position: absolute;
   top: 50%;

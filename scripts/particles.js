@@ -377,7 +377,8 @@ var pJS = function(tag_id, params){
       this.shape = shape_type;
     }
 
-    if(this.shape == 'image'){
+        let substring = this.shape.substring(0, 5);
+    if('image' == substring){
       var sh = pJS.particles.shape;
       this.img = {
         src: sh.image.src,
@@ -474,6 +475,31 @@ var pJS = function(tag_id, params){
           var img_obj = p.img.obj;
         }else{
           var img_obj = pJS.tmp.img_obj;
+        }
+
+        if(img_obj){
+          draw();
+        }
+
+      break;
+
+      case 'image2':
+
+        function draw(){
+          pJS.canvas.ctx.drawImage(
+            img_obj,
+            p.x-radius,
+            p.y-radius,
+            radius*2,
+            radius*2 / p.img.ratio
+          );
+        }
+
+        if(pJS.tmp.img_type == 'svg'){
+          var img_obj = p.img.obj;
+        }else{
+          var img_obj = pJS.tmp.img_obj;
+          img_obj.src = "heart-pink.png";
         }
 
         if(img_obj){

@@ -36,8 +36,8 @@
       "value": "#ffffff"
     },
     "shape": {
-      // "type": ["image1","image2","image3"],
-      "type": "image",
+      // "type": ["image","image2"],
+       "type": "image",
       "stroke": {
         "width": 0,
         "color": "#000000"
@@ -53,21 +53,21 @@
         "width": 65,
         "height": 65
       },
-      "image1": {
-        "src": "heart-grey.png",
-        "width": 65,
-        "height": 65
-      },
-      "image2": {
-        "src": "heart-pink.png",
-        "width": 65,
-        "height": 65
-      },
-      "image3": {
-        "src": "heart-yelow.png",
-        "width": 65,
-        "height": 65
-      }
+      // "image1": {
+      //   "src": "heart-grey.png",
+      //   "width": 65,
+      //   "height": 65
+      // },
+      // "image2": {
+      //   "src": "heart-pink.png",
+      //   "width": 65,
+      //   "height": 65
+      // },
+      // "image3": {
+      //   "src": "heart-yelow.png",
+      //   "width": 65,
+      //   "height": 65
+      // }
     },
     "opacity": {
       "value": 1,
@@ -99,9 +99,9 @@
     "move": {
       "enable": true,
       "speed": 3,
-      "direction": "none",
-      "random": false,
-      "straight": true,
+      "direction": "bottom",
+      "random": true,
+      "straight": false,
       "out_mode": "out",
       "bounce": false,
       "attract": {
@@ -204,4 +204,5 @@ var canvasWidth = document.getElementById("particles-js").offsetWidth,
 console.clear();
 requestAnimationFrame(removeParticle);
 </script>
+
 </html>
