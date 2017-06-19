@@ -25,10 +25,15 @@
 
 <script src="scripts/particles.js"></script>
 <script src="https://threejs.org/examples/js/libs/stats.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+
 
 <script>
-    particlesJS("particles-js", {
-  "particles": {
+  var options = 'scripts/options.jason',
+  hearts = ['hearts/heart-grey.png','hearts/heart-grey2.png','hearts/heart-grey3.png','hearts/heart-grey-reverse.png','hearts/heart-grey2-reverse.png','hearts/heart-grey3-reverse.png','hearts/heart-pink.png','hearts/heart-pink2.png','hearts/heart-pink3.png','hearts/heart-pink-reverse.png','hearts/heart-pink2-reverse.png','hearts/heart-pink3-reverse.png','hearts/heart-yelow.png','hearts/heart-yelow2.png','hearts/heart-yelow3.png','hearts/heart-yelow-reverse.png','hearts/heart-yelow2-reverse.png','hearts/heart-yelow3-reverse.png'];
+// options.particles.shape.image.src = transparent
+        particlesJS('particles-js', {
+        "particles": {
     "number": {
       "value": 50,
       "density": {
@@ -40,8 +45,7 @@
       "value": "#ffffff"
     },
     "shape": {
-      // "type": ["image","image2"],
-       "type": "image",
+      "type": "image",
       "stroke": {
         "width": 0,
         "color": "#000000"
@@ -50,28 +54,11 @@
         "nb_sides": 5
       },
       "image": {
-        // "src": "http://www.pandora.net/assets/content?sku=792075ENMX&format=png&width=124&height=124&hash=3F6EDB987EFFD59D09C27BAB7F417E624C2D694E",
-        // "src": ["heart-grey.png", "heart-pink.png", "heart-yelow.png"],
-        "src": "heart-yelow.png",
-        // "src": "https://crossorigin.me/https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg",
+        // "src": ["heart-grey.png", "heart-pink.png", "heart-yelow.png"],        
+        "src": "hearts/transparent1x1.png",
         "width": 65,
         "height": 65
-      },
-      // "image1": {
-      //   "src": "heart-grey.png",
-      //   "width": 65,
-      //   "height": 65
-      // },
-      // "image2": {
-      //   "src": "heart-pink.png",
-      //   "width": 65,
-      //   "height": 65
-      // },
-      // "image3": {
-      //   "src": "heart-yelow.png",
-      //   "width": 65,
-      //   "height": 65
-      // }
+      }
     },
     "opacity": {
       "value": 1,
@@ -156,6 +143,29 @@
   },
   "retina_detect": true
 });
+        var pJS = window.pJSDom[0].pJS,
+          particles = pJS.particles.array;
+        setTimeout(() => {
+          particles.forEach(particle => this.customizeParticle(particle))
+        }, 1000);
+
+       var customizeParticle = function(particle) {
+        const random = Math.floor(Math.random() * hearts.length),
+          image = new Image()
+          opacityObject = {opacity: 0}
+        TweenLite.to(opacityObject, 2, {
+          opacity: 1,
+          ease: window.Power1.easeOut
+        })
+        image.addEventListener('load', () => {
+          particle.customDraw = (canvasContext, x, y, width, height) => {
+            canvasContext.globalAlpha = opacityObject.opacity
+            canvasContext.drawImage(image, x, y, width, height)
+          }
+        })
+        image.src = hearts[random]
+      }
+
 </script>
 
 <script>
